@@ -20,7 +20,7 @@ masive = [1,2,3,4],
 reg_exp = /w+ /g,
 func = function(){};
 console.log("-------------------------")
-console.log(typeof obj);
+console.log(  obj);
 console.log(typeof masive);
 console.log(typeof reg_exp);
 console.log(typeof func);
@@ -124,6 +124,46 @@ console.log(string.split(" "));
 console.log(string.toUpperCase());
 console.log(string.toLowerCase());
 console.log(string[10]);
+// Логические значения урок 7.
+console.log(5===5);
+console.log(5===6);
+// Выполняется значение 'false'
+// console.log(Boolean(udefined));
+console.log(Boolean(null));
+console.log(Boolean(0));
+console.log(Boolean(NaN));
+console.log(Boolean(""));
+var s = "text";
+if (s) {
+	console.log("It's true");
+}
+ console.log("-------------------------");
+
+console.log(`true && false: ${true && false}`);
+console.log(`true && true: ${true && true}`);
+
+console.log(`true || false: ${true || false}`);
+console.log(`false || false: ${false || false}`);
+console.log(`!true: ${!true}` );
+console.log(`!false: ${!false}`);
+
+var a = 0,
+isTrue = true;
+isTrue && (a=5);
+console.log(a);
+
+var someString = "Non-empty string";
+var newString = someString || "Default String";
+console.log(newString);
+// nul and udefined урок 8.
+//nul and udefined - Оба обозначают отсутствие значения.
+console.log(typeof null);
+console.log(typeof undefined);
+
+
+
+
+
 
 
 
