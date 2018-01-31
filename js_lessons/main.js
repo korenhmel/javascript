@@ -99,6 +99,31 @@ console.log(0.1 + 0.2);
 console.log(10000000000000004 + 10000000000000005);
 console.log((0.1 + 0.2).toFixed(4));
 
+// строки строковые литералы  урок 6.
+
+console.log("some string");
+console.log('another string');
+console.log('hello world!'.length);
+// перенос строки
+console.log("hello world \nworld is butiful");
+console.log("the world \"is on fire\" ");
+
+var string = "Sometimes the same is different";
+console.log(string.charAt(0));
+console.log(string.substring(10));
+console.log(string.substring(10,18));
+console.log(string.substr(10,8));
+console.log(string.slice(-9));
+console.log(string.indexOf("di"));
+console.log(string.indexOf("mes"));
+console.log(string.lastIndexOf("m"));
+console.log(string);
+string = string.replace("is", "is no");
+console.log(string);
+console.log(string.split(" "));
+console.log(string.toUpperCase());
+console.log(string.toLowerCase());
+console.log(string[10]);
 
 
 
