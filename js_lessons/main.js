@@ -155,10 +155,82 @@ console.log(a);
 var someString = "Non-empty string";
 var newString = someString || "Default String";
 console.log(newString);
-// nul and udefined урок 8.
-//nul and udefined - Оба обозначают отсутствие значения.
+// Null and undefined lesson 8.
+// Null and undefined - Отсутствие значений.
+
 console.log(typeof null);
 console.log(typeof undefined);
+
+// Значение undefined
+ // не инициилизированная переменная
+ var temp;
+ console.log(temp);
+ // не существующее свойство обьекта
+ var obj = {};
+ console.log(obj.property);
+ //не сущесвующий обьект массива
+ arr = [1, 2, 3, 4];
+ console.log(arr[4]);
+ //не передали параметров в функцию
+ function greet(name) {
+ 	return "hello " + name;
+ }
+console.log(greet("Koren!!!"));
+console.log(greet());
+// равны по значению, не равны по типу.
+console.log(null == undefined);
+console.log(null === undefined);
+console.log("-------------------------------");
+// Преобразование типов lesson 9.
+console.log(5 + "5");
+console.log("5" * "4");
+console.log("5" * "hi");
+// Явные преобразования
+console.log(Number("565"));
+console.log(String(2347));
+console.log(typeof String(2347));
+console.log(Boolean(4));
+console.log(typeof (Boolean(4)));
+ // преобразование числа в булево значение
+ console.log(!!6);
+ console.log(!!0);
+ // преобразование в строку
+ console.log(typeof (234 + ""));
+ // преобразование в число
+ console.log(typeof (+"345"));
+
+ var number = 3457876
+ console.log(typeof number.toString());
+ // перевод в шестнадцатеричное значение
+ console.log(number.toString(16));
+// перевод значения лог оператора в строку
+ console.log(typeof false.toString());
+console.log(parseInt("45 px", 10));
+console.log(parseFloat("45.34 px"));
+
+ console.log(typeof String(Infinity));
+ console.log(typeof String(NaN));
+ console.log(+"");
+//вернут при преобразовании в логическое вернут false
+ console.log(!!"");
+ console.log(!!NaN);
+ console.log(!!0);
+ console.log(!! null);
+ console.log(!!undefined);
+// вернут true
+  console.log(!!"hi");
+  console.log(+"   4");
+  console.log(parseInt("4  px"));
+  console.log(+ true);
+  console.log(+ false);
+
+   var n = 5;
+  console.log(n.value);
+  n = null;
+   console.log(n.value);
+
+
+
 
 
 
