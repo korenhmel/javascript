@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator</title>
+	<style>
+	#calc-container{
+		position: relative;
+		width: 300px;
+		height: 275px;
+		border: 2px solid black;
+		border-radius: 6px;
+		background-color: #532678;
+		margin: 2%;
+	}
+
+	input[type= button]{
+		background: #575363 ;
+		width:  20%;
+		color: white;
+		font-size: 20px;
+		font-weight: 900px;
+		margin: 1%;
+		border-radius: 10px;
+
+	}
+	input[type= text]{
+		margin: 4%;
+		width:  85%;
+		font-size: 20px;
+        background:  #D6F0AD;
+        border-radius: 4px;
+	}
+
+</style>
+	
+</head>
+<body bgcolor="b8860b">
+<p>&#8730;</p>
+<center><br/>
+<div id= "calc-container">
+	<form name= "calculator">
+		<input type="text" name= "answer"/>
+		<br/>
+
+		<br/>
+		<input type="button" value= " 1 " onClick= "calculator.answer.value +='1'">
+		<input type="button" value= " 2 " onClick= "calculator.answer.value +='2'"/>
+		<input type="button" value= " 3 " onClick= "calculator.answer.value +='3'"/>
+		<input type="button" style="background-color: #398BE3" value= " + " onClick= "calculator.answer.value +='+'"/>
+		<br/>
+		<input type="button" value= " 4 " onClick= "calculator.answer.value +='4'">
+		<input type="button" value= " 5 " onClick= "calculator.answer.value +='5'"/>
+		<input type="button" value= " 6 " onClick= "calculator.answer.value +='6'"/>
+		<input type="button" style="background-color: #398BE3" value= " - " onClick= "calculator.answer.value +='-'"/>
+		<br/>
+		<input type="button" value= " 7 " onClick= "calculator.answer.value +='7'">
+		<input type="button" value= " 8 " onClick= "calculator.answer.value +='8'"/>
+		<input type="button" value= " 9 " onClick= "calculator.answer.value +='9'"/>
+		<input type="button" style="background-color: #398BE3" value= " x " onClick= "calculator.answer.value +='*'"/>
+		<br/>
+		<input type="button" value= " 0 " onClick= "calculator.answer.value +='0'"/>
+		<input type="button" value= " 00 " onClick= "calculator.answer.value += '00'"/>
+		<input type="button" value= " . " onClick= "calculator.answer.value +='.'">
+		<input type="button" style="background-color: #398BE3" value= " / " onClick= "calculator.answer.value +='/'"/>
+		<br/>
+		<input type="button" style="background-color: #E83F4A"  value= " C " onClick= "calculator.answer.value =''">
+		<input type="button" style="background-color: #398BE3" value= " &#8730; " onClick= "calculator.answer.value = Math.sqrt(calculator.answer.value)">
+		<input type="button" style="background-color: #398BE3" value= " % " onClick= "calculator.answer.value += '%'"/>
+		<input type="button" style="background-color: #398BE3" value= " = " onClick= "calculator.answer.value = eval(calculator.answer.value)"/>
+
+	</form>
+	
+</div>
+ </center>
+</body>
+</html>
