@@ -229,7 +229,7 @@ console.log(parseFloat("45.34 px"));
   n = 0;
    console.log(n.value);
 
-   // Условные инструкции
+   // Условные инструкции lesson 10.
 
    if (true) console.log("It's true");
    	if (false) console.log("it's true");
@@ -266,6 +266,26 @@ console.log(parseFloat("45.34 px"));
 
 console.log(homecity);
 
+// Условный оператор lesson 11.
+// Синтаксис условного оператора
+// выражение1 ? выражение2 : выражение3
+var x = 10;
+var text = x>10 ? "x more than ten" : x< 10 ? "x less than 10" : "x equal ten";
+console.log(text);
+// this expression would work the same as the previous.
+
+console.log("-------------");
+   if (x >10){
+	x = "x more than ten";
+	} else if (x <10){
+	 x =	"x less than ten";
+	}   else {
+	 x = "x equal ten";
+	}
+	console.log(x);
+   // expression, expression
+   var test = (15,20);
+   console.log((test, "Hello"));
 
 
 
