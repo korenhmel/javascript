@@ -226,10 +226,45 @@ console.log(parseFloat("45.34 px"));
 
    var n = 5;
   console.log(n.value);
-  n = null;
+  n = 0;
    console.log(n.value);
 
+   // Условные инструкции
 
+   if (true) console.log("It's true");
+   	if (false) console.log("it's true");
+   	
+   
+    var a = 10
+    if (a>3){
+    	a*=3;
+    	console.log(a); 
+    }
+
+   	if (a<3){
+   		console.log(a);
+   		console.log("hello!!");
+   	} else console.log("a is not less than 3");
+
+   	var name = "Sorax", homecity;
+   	
+   	if (name === "John" ){
+   		homecity = "Boston";
+   	} else if (name === "Sorax"){
+   		homecity = "Belgorod";
+   	} else if (name === "Bill"){
+   		homecity = "LA";
+   	} 
+    console.log(homecity);
+  var nick = "Bill";
+  switch(nick){
+  	case "John": homecity = "Boston";break
+  	case "nicksorax": homecity = "Baltemore";break
+  	case "Bill" : homecity = "LA";break
+  	default: homecity = "Moskow";
+  }
+
+console.log(homecity);
 
 
 
