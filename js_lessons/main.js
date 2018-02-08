@@ -286,16 +286,28 @@ console.log("-------------");
    // expression, expression
    var test = (15,20);
    console.log((test, "Hello"));
+// Loops lesson 12.
+// for (expression; test; инкремент;) тело цикла
+ var i;
+ // for (i=0; i < 10; i++){
+ // 	console.log(i);
+ // }
+// можно из выражения выкинуть i>0 так как при x = o цикл остановиться
+// for (i= 10; i > 0; i--){
+//  	console.log(i);
+//  }
+// console.log("-------------------");
+// for (i= 10; i--;){
+//  	console.log(i);
+//  }
+//  console.log("-------------------");
 
-
-
-
-
-
-
-
-
-
-
-
-
+// while (expression) instruction
+// var i = 0;
+// while(i < 10) {
+// 	console.log(i++);
+// }
+ console.log("-------------------");
+// do инструкция while выражения
+var i = 0;
+do console.log(i++); while (i<10)
