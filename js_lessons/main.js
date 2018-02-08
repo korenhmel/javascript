@@ -311,3 +311,49 @@ console.log("-------------");
 // do инструкция while выражения
 var i = 0;
 do console.log(i++); while (i<10)
+//Functions, lesson 13
+console.log("-------------------");
+//function identificator(arguments){
+// instructions	
+//}
+function greet(name){
+	return "Hello " + name;
+}
+console.log(greet("Sorax").toUpperCase());
+//анонимная функция
+var other = function(name){
+	return "hello " + name;
+};
+console.log(other("koren"));
+// Функция с множественными аргументами
+var other2 = function(name){
+	console.log(arguments[2]);
+	return "hello " + name;
+};
+console.log(other2("koren!!",34, 45, 56));
+// передача функции которая выполняется после выполняния функции, в которую она передается.
+//callback
+var func = function(callback){
+	var name = "Stepan";
+callback(name);
+};
+	
+	func(function(n){
+	console.log("Hello "+ n);
+	});
+// Функция может быть возвращаемым значением
+ var func = function(){
+   return function() {
+   	console.log("hi");
+   }
+ };	
+func()();
+
+// функция может быть вызвана сразу после определения если мы используем выражение определение.
+// Анонимная самовызывающаяся функция.
+var greeting = (function(name){
+	return "Hello " + name;
+	// присвоили результат переменной
+}("Amitabhi"));
+
+console.log(greeting);
