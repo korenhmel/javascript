@@ -490,4 +490,5 @@ console.log(counter2());
 console.log(counter2(400));
 console.log(counter2());
 console.log(counter2());
-
+// Обработка исключений lesson 16
+// throw выражение
