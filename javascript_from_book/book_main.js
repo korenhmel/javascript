@@ -32,8 +32,8 @@ while(num <= 12){
 console.log("---------------------")
 // моя програмка возведение любого числа в степень
 var counter = 1;
-var num = 3
-var stepen = 5
+var num = 2
+var stepen = 10
 // можно сделать сделать клон независимой переменной при помощи метода slice()
 var numNew = String(num).slice();
 while(counter < stepen){	
@@ -122,4 +122,102 @@ console.log("---------------------")
       console.log(i + "  " + doska);	
     i+=1;
 }
+console.log("------------Function-----------")
+// Функции
+// функция начинается с ключевого слова function где значение принимает обычная переменная.
+var square = function(x){
+ return	x*x;
+}
+console.log(square(12))
+// функции могут быть без аргументов и с аргументами один и больше.
+// без аргументов
+var func = function(){
+	console.log("hrjass!!")
+}
 
+func();
+// с двумя аргументами. возведения числа в степень
+
+var power = function(base, exponent){
+result = 1;
+for(var count = 0; count < exponent; count++)
+result*= base;
+// инструкция return определяет значение возвращаемое функцией.
+// когда обработка программы доходит до этой инструкции, она сразу же
+// выходит из функции и возвращает значение.
+return result;
+}
+console.log(power(2, 10));
+// Области видимости
+// примеры иллюстрирующие работу переменных внутри и снаружи функции
+
+var greet = "hello!!"
+
+var func = function(){
+ var greet = "hello koren";
+}
+
+func();
+console.log(greet)
+// "hello!!"
+
+var func2 = function(){
+	greet = "hello inside func 2";
+}
+func2();
+console.log(greet);
+
+// Вложенные области видимости
+// функции можно задавать внутри фукций что приводит к нескольким уровням локальности.
+// Пример вложеннсти фукций.
+/* функции flat и mountain видят переменную result, потому что они находяться
+внутри функции, в которой она определена.Но они не видят переменной count друг
+друга потому что они находятся вне области видимости другой.*/
+
+var landscape = function(){
+	 var result = "";
+	flat = function(size){
+		for(var count= 0; count <= size; count++)
+			result+= "_";
+
+	};
+	var mountain = function(size){
+	 result+="/"
+	 for(var count= 0; count<= size; count++)
+	 	result += "'";
+	    result += "\\";
+	}
+	flat(3);
+	mountain(2);
+	flat(1);
+	mountain(4);
+	flat(5);
+	return result;
+}
+
+console.log(landscape());
+// Обьявление функций
+// как мы видим обьявление функции было ниже вызова
+// однако функция работает.
+
+console.log("The future says: ", future());
+function future(){
+	return "we still have no flying cars";
+}
+// инструкция обьявляет переменную grat и присваевает 
+// ей значение функции.
+// место из которого была вызвана функция называется стэком.
+function grat(who) {
+ console.log('privet'+ who);
+}
+grat("Semen");
+console.log("Pokeda!!");
+
+// нельзя помещать обьявление функции внутри блока или цикла 
+function example(){
+	function a() {}; //так нормально
+}
+
+if something{
+	function b {}; //Ай -яй -яй, так делать нельзя 
+}
