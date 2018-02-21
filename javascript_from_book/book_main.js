@@ -29,11 +29,11 @@ while(num <= 12){
 	console.log(num);
 	num +=2;
 }
-console.log("---------------------")
+console.log("---------------------");
 // моя програмка возведение любого числа в степень
 var counter = 1;
-var num = 2
-var stepen = 10
+var num = 2;
+var stepen = 10;
 // можно сделать сделать клон независимой переменной при помощи метода slice()
 var numNew = String(num).slice();
 while(counter < stepen){	
@@ -41,7 +41,7 @@ while(counter < stepen){
   num*= numNew;
 }
 console.log(Number(num));
-console.log("---------------------")
+console.log("---------------------");
 // возведение числа 2 степень из книги
 var result = 1;
 var counter = 0;
@@ -60,7 +60,7 @@ console.log(result);
 
 // цикл for делает примерно тоже самое что и while, но инструкции сгруппированы в строчку.
 for(var number = 0; number <=12; number += 2)
-	console.log(number)
+	console.log(number);
 // вычислим 2^10 при помощи for
 result = 1;
 for(var counter =1; counter <=4; counter+=1)
@@ -92,7 +92,7 @@ if(triangle.length == 8)
 // написать програмку которая перебирает числа от 1 до 100
 // и если число делиться без остатка на 3 выводит в строке 'Fiz'
 // а если число делиться на 5 без остатка выводит 'Buzz'
-console.log("---------------------")
+console.log("---------------------");
 // var number = 0;
 // while(number <=100){
 // 	number+= 1;
@@ -105,7 +105,7 @@ console.log("---------------------")
 // }
 
  var hor = 10;
- var vert = 10;
+ var vert = 11;
  var doska = "# ";
  var vertDoska = 0;
  while(doska.length/2+1 <= hor){
@@ -121,21 +121,24 @@ console.log("---------------------")
     else
       console.log(i + "  " + doska);	
     i+=1;
+   
 }
-console.log("------------Function-----------")
+
+console.log("------------Function-----------");
 // Функции
 // функция начинается с ключевого слова function где значение принимает обычная переменная.
 var square = function(x){
  return	x*x;
 }
-console.log(square(12))
+console.log(square(12));
 // функции могут быть без аргументов и с аргументами один и больше.
 // без аргументов
 var func = function(){
-	console.log("hrjass!!")
+	console.log("hrjass!!");
 }
 
 func();
+
 // с двумя аргументами. возведения числа в степень
 
 var power = function(base, exponent){
@@ -151,14 +154,14 @@ console.log(power(2, 10));
 // Области видимости
 // примеры иллюстрирующие работу переменных внутри и снаружи функции
 
-var greet = "hello!!"
+var greet2 = "hello!!";
 
 var func = function(){
- var greet = "hello koren";
+ var greet2 = "hello koren";
 }
 
 func();
-console.log(greet)
+console.log(greet2);
 // "hello!!"
 
 var func2 = function(){
@@ -207,6 +210,7 @@ function future(){
 // инструкция обьявляет переменную grat и присваевает 
 // ей значение функции.
 // место из которого была вызвана функция называется стэком.
+
 function grat(who) {
  console.log('privet'+ who);
 }
@@ -214,10 +218,46 @@ grat("Semen");
 console.log("Pokeda!!");
 
 // нельзя помещать обьявление функции внутри блока или цикла 
-function example(){
-	function a() {}; //так нормально
+// function example(){
+// 	function a() {}; //так нормально
+// }
+
+// if something{
+// 	function b {}; //Ай -яй -яй, так делать нельзя 
+// }
+
+// Функции
+// Необьявленные аргументы
+
+//официально такая функция выполняется с одним аргументом
+// однако это работает, яваскрипт очень лоялен по поводу кол-ва аргументов
+// передаваемых в функции.
+// минус этого подхода - можно передать неправильное кол-во аргументов.
+// плюс в том что можно создавать функции принимающие необязательные 
+// аргументы
+// alert("zdraste", "dobrui vecher", "vsem privet");
+function power2(base, exponent){
+	if (exponent == undefined)
+		exponent = 2;
+	var result = 1;
+	for (var count = 0; count < exponent; count ++)
+		result*= base;
+	return result;
 }
 
-if something{
-	function b {}; //Ай -яй -яй, так делать нельзя 
+console.log(power2(4));
+console.log(power2(4, 3))
+// Функции
+// Замыкания
+// Возможность работать со ссылкой на какой то экземпляр локальной переменной
+// называется замыканием
+// Примеры
+function wrapValue(n){
+	var localVar = n;
+	return function() {return localVar;};
 }
+
+var wrap1 = wrapValue(1);
+var wrap2 = wrapValue(2);
+console.log(wrap1());
+console.log(wrap2());
