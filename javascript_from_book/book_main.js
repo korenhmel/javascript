@@ -247,6 +247,7 @@ function power2(base, exponent){
 
 console.log(power2(4));
 console.log(power2(4, 3))
+console.log("----------------")
 // Функции
 // Замыкания
 /* Возможность использовать вызовы функций как переменные в купе с тем фактом
@@ -272,6 +273,7 @@ var wrap1 = wrapValue(1);
 var wrap2 = wrapValue(2);
 console.log(wrap1());
 console.log(wrap2());
+console.log("------------------------")
 //Функции
 // Рекурсия
 // Функция может вызывать сама себя, такая функция называется рекурсивной.
@@ -320,4 +322,54 @@ find(1, "1")
            find(13, "(((1*3)+5)+5)")
        found!!
 */
+// Выращивание функций
+/* 
+  Существует два более менее естественных способа ввода функций в программу
+Первый- вы пишите схожий код несколько раз. Этого надо избегать потому что 
+чем больше кода написано тем болшая вероятность ошибки, и тем труднее читать
+ваш код другим програмистам. Так что берем повторяющуюся функциаональность,
+даем ей подходящее имя и помещаем в функцию.
+ Второй способ - вы обнаруживаете потребность в некой новой функциональности
+которая достойна помещения в новую функцию. Начинаете с названия функции и затем
+пишите ее тело. Можно даже начинать с написания кода использующую функцию до того 
+как она будет определена.
+*/
+console.log("--------------------")
+// Упражнения для закрепления материла стр 103.
+// найти минимальное значение из двух.
+function min (a, b){
+	if(a<b)
+		return a;
+	else
+		return b;
+}
 
+console.log(min(-4,-7));
+// моя рекурсия
+
+function isEven(num){
+	if(num == 0)
+		return true;
+	else if(num == 1)
+		return false;
+	else if(num < 0)
+		return isEven(num+2);
+	else
+		return isEven(num-2);
+}
+
+console.log(isEven(50));
+console.log(isEven(75));
+console.log(isEven(-1));
+console.log(isEven(-6));
+
+  function countBs(word, ltr){
+	var count = 0;
+	 for(var bNum = word.length-1; bNum >= 0; bNum--)	
+	if(word.charAt(bNum) == ltr)
+	 count +=1;
+    return count;
+  }
+ 
+var text = "pesen esche nedopisannuh skolko, skagi kukushka propoj v gorode mne git ili na vuselkah"
+console.log(countBs(text, "d"));
