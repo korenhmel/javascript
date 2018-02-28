@@ -446,12 +446,26 @@ console.log("karambol".slice(2));
 console.log("karambol".slice(2, 7));
 // метод trim убирает пробелы, табуляцию, перевод строк с обоих концов строки.
 console.log(" karambol \n".trim());
+// Обьект аргумент
+// Когда вызывается функция, к окружению исполняемого тела функции добавляется особая
+// переменная под названием arguments. Она указывает на обьект содержащий все аргументы
+// переданные функции.
+// В яваскрипте можно передавать в функцию больше или меньше аргументов чем обьявлено.
+function noArguments(){}
+	noArguments(1,2,3); // можно так.
+
+function threeArguments(a, b, c){}
+threeArguments(); // и так можно
+
+// функция иллюстирующая подсчет своих аргументов при помощи метода length.
 function argumentsCounter(){
 console.log("tu dal mne", arguments.length, "argumenta");
 }
 argumentsCounter("djadja", "Stepa", "velikan" );
 //можно в массив закидывать обьекты
 // метод который закидывает в массив journal3 обьекты
+// функция пропускает первый аргумент, а со второго и до последнего аргумента прогоняет в 
+// цикле закидывая их в массив.
 var journal = [];
 function addEntry4(squirell){
 	var entry = {events: [], squirell: squirell };
@@ -493,6 +507,9 @@ console.log(`kol-vo objektov: ${journal.length}`);
 //  	proizvol("bita", "chashka", "sportloto");
 // console.log(table);
 
-
+// Обьект Math
+console.log(parseInt(12.45));
+console.log(Math.random());
+console.log(Math.floor(Math.random()*100));
 for(var number = 0; number <=48; number += 2);
 	console.log(number);
