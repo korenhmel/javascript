@@ -373,3 +373,126 @@ console.log(isEven(-6));
  
 var text = "pesen esche nedopisannuh skolko, skagi kukushka propoj v gorode mne git ili na vuselkah"
 console.log(countBs(text, "d"));
+console.log("----------Structuru dannuh objectu, massivu------------");
+//Структуры данных, обьекты, массивы
+
+// var day1 = {
+	
+// 	events: ["rabota", "tronul derevo", "pizza", "probegka"],
+// 	squarell : false
+// };
+
+// console.log(day1.squarell);
+// console.log(day1.events);
+// Журнал оборотня
+var journal = [];
+function addEntry(events, didITurnIntoASquirell){
+journal.push({
+	events: events,
+	squirell: didITurnIntoASquirell
+});
+	
+}
+
+addEntry(["rabota1", "sjel oreh", "glintvain", "probegka"], true);
+addEntry(["dengi", "birga", "bizness"], false)
+
+console.log(journal[0].events, journal[0].squirell);
+console.log(journal[1].events, journal[1].squirell);
+
+var toDoList = [];
+// методы массива
+function rememberTo(task){
+	toDoList.push(task);
+}
+ 
+ function whatIsNext(){
+ 	return toDoList.shift();
+ }
+function urgentlyRememberTo(task){
+	toDoList.unshift(task);
+}
+rememberTo("pomut pol");
+rememberTo("pokleit oboi");
+rememberTo("sjezdit v restoran");
+urgentlyRememberTo("perekrut vody");
+
+// whatIsNext();
+ console.log(whatIsNext());
+  console.log(whatIsNext());
+
+console.log(toDoList);
+console.log("-------------");
+// по методам массива indexOf(x) можно определять индекс указанной цифры спереди массива и 
+// по методу lastIndexOf(x) с конца массива.
+// оба метода принимают необязательный второй аргумент который задает начальную позицию поиска.
+console.log([1, 2, 3, 2, 1].indexOf(2));
+console.log([1, 2, 3, 2, 1].lastIndexOf(2));
+// метод slice принимает номера начального(start), и конечного(end) массивов и возвращает массив состоящий
+// только из елементов попадших в этот промежуток.
+var elem = [0,1,2,3,4];
+console.log(elem.slice(1,3));
+// если нет второго аргумента в методе slice, тогда в массив попадут все елементы начиная с указанного.
+console.log(elem.slice(2));
+// метов массива concat соединяет два массива в один.
+var  pYsh = ["o","skolko","num","otkrutij","chudnuh"];
+var kin = ["gotovit","prosvechenja","duh"];
+var pushkin = pYsh.concat(kin);
+console.log(pushkin);
+
+console.log("kokos".charAt(3));
+console.log("karambol".indexOf("r"));
+console.log("karambol".slice(2));
+console.log("karambol".slice(2, 7));
+// метод trim убирает пробелы, табуляцию, перевод строк с обоих концов строки.
+console.log(" karambol \n".trim());
+function argumentsCounter(){
+console.log("tu dal mne", arguments.length, "argumenta");
+}
+argumentsCounter("djadja", "Stepa", "velikan" );
+//можно в массив закидывать обьекты
+// метод который закидывает в массив journal3 обьекты
+var journal = [];
+function addEntry4(squirell){
+	var entry = {events: [], squirell: squirell };
+	for (var i = 1; i < arguments.length; i++){
+	 entry.events.push(arguments[i]);
+    }
+     journal.push(entry);
+}
+
+   addEntry4(true, "s", "pisec", "nadejus rabotaet");
+   addEntry4(false, "be be", "myy", "chas tochno uznaem");
+  
+console.log(journal[0].events,journal[0].squirell);
+console.log(journal[1].events, journal[1].squirell);
+console.log(`kol-vo objektov: ${journal.length}`);
+
+
+
+
+//    var table = [];
+// function proizvol(args){
+//  for(var i = 0; i < arguments.length; i++){
+//    table.push(arguments[i]);
+//    }
+// }
+
+// proizvol("lohmond", "sushkkin", "lohotron");
+// console.log(table);
+
+
+//    var table = [];
+// function proizvol(args){
+// 	var events = 0;
+//   while (events < arguments.length){
+//   	  table.push(arguments[events]);
+//       events +=1;
+//   };
+// }
+//  	proizvol("bita", "chashka", "sportloto");
+// console.log(table);
+
+
+for(var number = 0; number <=48; number += 2);
+	console.log(number);
