@@ -511,5 +511,224 @@ console.log(`kol-vo objektov: ${journal.length}`);
 console.log(parseInt(12.45));
 console.log(Math.random());
 console.log(Math.floor(Math.random()*100));
-for(var number = 0; number <=48; number += 2);
-	console.log(number);
+// Задание к разделу обьекты массивы.
+// Создать функию range(a, b) аргументы которого позитивные числа
+// и создать массив от данного числа и выше или ниже следующего по порядку
+// если указывается необязательный третий аргумент то массив должен быть с шагом 
+//с разницей равная третьему аргументу.
+function range(a, b){
+  var mass = [];
+  
+  var arg = arguments[2]|| 1 ;
+   var arg2 = arguments[2]|| -1;
+   arg2*= -1;
+  if(a < b )
+   for(var count1 = a ; count1 <= b ; count1+= arg){
+	mass.push(count1);
+   }
+    if(a > b )
+   	for(var count1 = a ; count1 >= b  ; count1 -= arg2){
+	mass.push(count1);
+   }
+ return mass;
+}
+console.log(range(10, 1, -4));
+
+// создать массив суммирующий все числа в массиве.
+ function sum(arr){
+ 	 var allsum = 0;
+ 	for(var count = 0; count < arr.length; count++){
+ 		allsum += arr[count];
+ 	}
+    return allsum;
+ }
+console.log(sum(range(1, 10)));
+//создать функцию которая переворачивает массив и делает новый массив в обратном порядке.
+function reverseArray(mass){
+	// return mass.reverse();
+	var newArr2 = [];
+	for(var counthz = 0; counthz < mass.length; counthz++){
+     newArr2.unshift(mass[counthz]);
+	}
+   return newArr2;
+}
+
+function reverseArrayInPlace(mass){
+	for(var counthz = mass.length-1; counthz >= 0; counthz--){
+     mass.push(mass[counthz]);
+	}
+	// Интересно ведут себя циклы, если после первого цикла 
+	// вывести значение аргумента mass.length то значение будет 20
+	// то что в массиве должно появиться больше елементов
+	// с первым действием цикла никак не влияет на значение
+	// внутри второго цикла (mass.length).
+	//mass.length внутри второго цикла имеет значение 10
+    for(var counthz2 = 0; counthz2 < mass.length; counthz2++){
+    mass.shift();
+    }
+  return mass;
+}
+ var arrayValue1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+ var arrayValue2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log(reverseArray(arrayValue1));
+console.log(arrayValue1);
+console.log("-----------------");
+console.log(reverseArrayInPlace(arrayValue2));
+console.log(arrayValue2);
+
+//  function arrayToList(array)
+// {
+//     var list = {};
+//     var lastRest = list;
+//     array.forEach(function(elem)
+//                   {
+//                       lastRest.value = elem;
+//                       lastRest.rest = {};
+//                       lastRest = lastRest.rest;
+//                   });
+//     lastRest.rest = null;
+//     return list;
+// }
+
+// console.log(arrayToList([10, 20, 30]));
+function arrayToList(array) {
+    // I use an object constructor notation here
+    var list = new Object();
+    // This is to end the recursion, if array.length == 1, the function won't call itself and instead
+    // Just give rest = null
+    if (array.length == 1) {
+        list.value = array[array.length - 1];
+        list.rest = null;
+        return list;
+    } else {
+        // This is to continue the recursion.  If the array.length is not == 1, make the rest key to call arrayToList function
+        list.value = array[0];
+        // To avoid repetition, splice the array to make it smaller
+        array.splice(0,1);
+        list.rest = arrayToList(array);
+        return list;
+    }
+}
+   obj = arrayToList([10, 20, 30, 40]);
+   console.log(obj.rest.rest.rest)
+
+    // laspi.splice(0,1);
+   // console.log( arrayToList([10, 20, 30]));
+
+     
+    function listToArray(object){
+    	var list = [];
+    	 while (object != undefined){
+    	 	list.push(object.value);
+    	     object = object.rest;
+    	     }  
+        return list;
+     }
+console.log(listToArray(obj));
+
+
+   function prepend(a, b) {
+  var li = {};
+  li.value=a, li.rest=b;
+  return li;
+}
+
+ // console.log(prepend(10, prepend(20, null)));
+
+ // function nth(a, b){
+ // 	list = [];
+
+ // 	if list[b] == a
+ // 		return list[b];
+ // }
+
+function nth(li, n) {
+  var elem, cnt=0;
+  for(var i=li; i; i=i.rest, cnt++) {
+    if(cnt==n) {
+      elem=i.value;
+      break;
+    }
+  }
+  return elem;
+}
+//  var herna = [];
+//  herna.push({value: 10, rest:{value: 20, rest: {value: 30, rest: null}}});
+// console.log(herna.length) //,herna[0].rest, herna[0].rest.rest );
+
+var obj = {here:{is: "an"}, object: 2};
+var obj2 = {here:{is: "of"}, object: 2}
+console.log(Object.keys(obj).length);
+// function deepEqualErr(a, b){
+//  var arr1 = [1, 2, 4];
+//  var arr2 = [1, 25, 4];
+//  // if (arr1.length == arr2.length)
+//  // 	return true;
+//    var count = 0;
+//    var arr3 = [];
+//    while (count < arr1.length-1){
+//    	count ++;
+//    	if (arr1[count] != arr2[count])
+//    		arr3.push("false");
+// }
+//  if (arr3.length == 0)
+//  	return true;
+//  else 
+//  	return false;
+//  	// else
+// 		// return false;  
+// }
+
+// function deepEqual(a, b){
+// 	if (typeof a == typeof b){
+// 	if (a.here.is == b.here.is)
+// 		return true;
+// 	else 
+// 		return false;}
+// 	else
+// 		return false;
+// }
+
+  function deepEqual(x, y) {
+  if ((typeof x == "object" && x != null) && (typeof y == "object" && y != null)) {
+    if (Object.keys(x).length != Object.keys(y).length)
+      return false;
+
+    for (var prop in x) {
+      if (y.hasOwnProperty(prop))
+      	return deepEqual(x[prop], y[prop]);
+     }
+  }
+  else if (x !== y)
+    return false;
+  else
+    return true;
+  }
+console.log(deepEqual(obj, obj2));
+
+
+// function deepEqual2(x, y){
+//   var arr = []
+//   for (var prop in x){
+// 	if (y.hasOwnProperty(prop))
+//       	// return deepEqual2(x[prop], y[prop]);
+       
+//     }
+    
+// }
+
+// console.log(deepEqual2(obj, obj2));
+
+var buz = {
+  hero: "pain", fog: "fogygy"
+};
+
+for (var name in buz) {
+  if (buz.hasOwnProperty(name)) {
+    alert('this is fog for sure(' + name + '). Meaning: ' + buz[name]);
+  }
+  else {
+    alert(name); // toString или что-то ещё
+  }
+}
