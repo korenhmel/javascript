@@ -814,6 +814,7 @@ console.log(ancestry.filter(function(person){
 }));
 // Функция map создает новый массив
 //из тех же елементов, есть смысл применять при фильтрации
+// функция map также является стандарным методом в массиве.
 function map(array, transform) {
   var mapped = [];
   for (var i = 0; i < array.length; i++)
@@ -826,4 +827,33 @@ var overNinety = ancestry.filter(function(person) {
 });
 console.log(map(overNinety, function(person) {
   return person.name;
+}));
+
+// переделанная функция которая находит наименьшее значение в массиве.
+function reduce2(array, combine) {
+  var current = array.first;
+  for (var i = 0; i < array.length; i++)
+    current = combine(current, array[i]);
+  return current;
+}
+console.log(reduce2([10, 8, 12, 9], function(a, b) {
+  if (a < b) return a;
+  else return b;
+}));
+
+// изначальный пример функции reduce из книги суммирует массив c начальной точки 0.
+function reduce(array, combine, start) {
+  var current = start;
+  for (var i = 0; i < array.length; i++)
+    current = combine(current, array[i]);
+  return current;
+}
+
+console.log(reduce([1, 2, 3, 4], function(a, b) {
+  return a + b;
+}, 2));
+// так работает стандартная функция reduce
+console.log(ancestry.reduce(function(min, cur) {
+  if (cur.born < min.born) return cur;
+  else return min;
 }));
